@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 
-export const axiosInstanceWithoutToken = axios.create();
+export const axiosInstanceWithoutToken = axios.create({ baseURL: process.env.REACT_APP_API_URI });
 
 axiosInstanceWithoutToken.interceptors.request.use((config) => {
   /* ----------------------------- API Call Start ----------------------------- */
@@ -17,7 +17,7 @@ axiosInstanceWithoutToken.interceptors.response.use((response) => {
   return response;
 });
 
-export const axiosInstance = axios.create();
+export const axiosInstance = axios.create({ baseURL: process.env.REACT_APP_API_URI });
 
 axiosInstance.interceptors.request.use((config = {}) => {
   /* ----------------------------- API Call Start ----------------------------- */

@@ -25,6 +25,8 @@ axiosInstance.interceptors.request.use((config = {}) => {
   /* eslint-disable no-console */
   // @ts-ignore
   config["headers"]["authorization"] = `bearer ${localStorage.getItem("ACCESS_TOKEN")}`;
+  // @ts-ignore
+  config["headers"]["accept"] = "application/vnd.github.v3+json";
   return config;
 });
 
